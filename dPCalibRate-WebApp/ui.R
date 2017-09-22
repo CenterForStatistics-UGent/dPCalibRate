@@ -13,7 +13,7 @@ library(rmarkdown)
 
 numSamples<-20
 ui<-shinyUI(dashboardPage(
-    skin="green",
+    skin="red",
 	dashboardHeader(title = "dPCalibRate"),
 	dashboardSidebar(
 	sidebarMenu(
@@ -81,15 +81,18 @@ dashboardBody(
 
 		 	h4("Citation"),
 		 	p("When using this application to analyse your dPCR data, please cite:"),
-		 	p("Vynck, M. et al. (2017). Quality control of digital PCR assays and platforms.")		 	      
+		 	p("Vynck, M. et al. (2017). Quality control of digital PCR assays and platforms. Analytical and Bioanalytical Chemistry."),
+		 	p("Full text available at http://rdcu.be/uU5W."),
+		 	p("More information on digital PCR data analysis on http://dpcr.ugent.be.")		 	      
       	)
     ),
     tabItem(tabName = "faq",
     	box(
-
-		 	h4("Questions? Feel free to contact me at Matthijs.Vynck@UGent.be.")#,
-		 	#p("Feel free to contact me at Matthijs.Vynck@UGent.be.")
- 	      
+			h4("Where can I find the underlying methodology?"),
+			p("The full text of our paper is available at http://rdcu.be/uU5W."),
+ 	      	h4("I have problems uploading my data!"),
+		 	p("The uploaded data must be in .csv format and contain two columns. The column headers should be named Observed and Expected. An example is available at http://users.ugent.be/~mvynck/calibration.csv.")	,
+		 	h4("Questions? Feel free to contact me at Matthijs.Vynck@UGent.be.")
       	)
 	)
   )
